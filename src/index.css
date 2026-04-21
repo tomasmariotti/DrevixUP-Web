@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 230 35% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 230 30% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 230 30% 10%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 91% 60%;
+    --primary-foreground: 230 35% 7%;
+    --primary-glow: 250 84% 67%;
+
+    --secondary: 230 25% 14%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 230 20% 16%;
+    --muted-foreground: 215 20% 70%;
+
+    --accent: 152 76% 50%;
+    --accent-foreground: 230 35% 7%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 25% 18%;
+    --input: 230 25% 18%;
+    --ring: 217 91% 60%;
+
+    --radius: 1rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(250 84% 67%));
+    --gradient-accent: linear-gradient(135deg, hsl(152 76% 50%), hsl(180 70% 55%));
+    --gradient-hero: radial-gradient(ellipse at top, hsl(250 84% 67% / 0.25), transparent 60%),
+                     radial-gradient(ellipse at bottom right, hsl(217 91% 60% / 0.2), transparent 60%);
+    --gradient-dark: linear-gradient(180deg, hsl(230 35% 7%), hsl(230 40% 4%));
+    --gradient-card: linear-gradient(145deg, hsl(230 30% 12% / 0.8), hsl(230 30% 8% / 0.4));
+
+    --shadow-glow: 0 20px 60px -10px hsl(217 91% 60% / 0.4);
+    --shadow-elegant: 0 25px 80px -20px hsl(250 84% 67% / 0.5);
+    --shadow-card: 0 10px 40px -10px hsl(230 50% 2% / 0.6);
+
+    --transition-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+
+    --sidebar-background: 230 35% 7%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 230 35% 7%;
+    --sidebar-accent: 230 25% 14%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 230 25% 18%;
+    --sidebar-ring: 217 91% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-image: var(--gradient-hero);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  .glass-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border));
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-accent {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glow-primary {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-accent {
+    box-shadow: 0 20px 60px -10px hsl(var(--accent) / 0.5);
+  }
+
+  .grid-pattern {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.4) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.4) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fade-up 0.8s var(--transition-smooth) both;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 1s ease-out both;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 40px hsl(var(--primary) / 0.4); }
+  50% { box-shadow: 0 0 80px hsl(var(--primary) / 0.7); }
+}
