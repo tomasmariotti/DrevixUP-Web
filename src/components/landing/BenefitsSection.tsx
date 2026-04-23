@@ -69,7 +69,7 @@ const BenefitsSection = () => (
           <motion.div
             key={b.title}
             variants={fadeUp}
-            className="group relative overflow-hidden rounded-2xl border border-border glass-card p-8 transition-all duration-500 hover:border-primary/40"
+            className="group relative overflow-hidden rounded-2xl border border-border glass-card p-6 md:p-8 transition-all duration-500 hover:border-primary/40"
             whileHover={{ scale: 1.02, transition: { duration: 0.3 } }}
           >
             <div className="flex items-start justify-between gap-4">

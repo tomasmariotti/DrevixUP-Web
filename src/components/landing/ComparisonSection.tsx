@@ -40,7 +40,7 @@ const ComparisonSection = () => (
         whileInView="show"
         viewport={{ once: true }}
         variants={stagger}
-        className="mx-auto mt-16 max-w-4xl overflow-hidden rounded-2xl border border-border glass-card"
+        className="mx-auto mt-16 max-w-4xl overflow-x-auto rounded-2xl border border-border glass-card"
       >
         {/* Header */}
         <div className="grid grid-cols-3 border-b border-border bg-secondary/30 px-6 py-4 text-sm font-semibold">

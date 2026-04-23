@@ -18,7 +18,7 @@ const CTASection = () => (
         <div className="absolute -left-20 -bottom-20 h-80 w-80 rounded-full bg-accent/20 blur-[120px]" />
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-60 w-60 rounded-full bg-[hsl(270_80%_65%/0.15)] blur-[100px]" />
 
-        <div className="relative p-10 md:p-16">
+        <div className="relative p-6 md:p-16">
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary/40 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-muted-foreground backdrop-blur">
               <Sparkles className="h-3.5 w-3.5 text-accent" />

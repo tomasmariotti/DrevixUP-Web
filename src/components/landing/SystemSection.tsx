@@ -65,7 +65,7 @@ const SystemSection = () => (
           <motion.div
             key={el.title}
             variants={fadeUp}
-            className="group relative overflow-hidden rounded-2xl border border-border glass-card p-8 transition-all duration-500 hover:border-primary/40"
+            className="group relative overflow-hidden rounded-2xl border border-border glass-card p-6 md:p-8 transition-all duration-500 hover:border-primary/40"
             whileHover={{ y: -8, transition: { duration: 0.3 } }}
           >
             {/* Glow background on hover */}

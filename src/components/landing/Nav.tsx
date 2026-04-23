@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, X, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ThemeToggle from "@/components/landing/ThemeToggle";
 import logoMark from "@/assets/drevixup-logo.png";
@@ -17,6 +17,7 @@ const Logo = ({ className = "h-9 w-9" }: { className?: string }) => (
 
 const Nav = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
@@ -41,13 +42,54 @@ const Nav = () => {
         </nav>
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Button variant="hero" size="sm" asChild>
+          <Button variant="hero" size="sm" asChild className="hidden sm:inline-flex">
             <a href="#cta-final">
               Activar mi sistema <ArrowRight className="h-4 w-4" />
             </a>
           </Button>
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden p-2 text-muted-foreground hover:text-foreground"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-xl">
+          <nav className="container mx-auto flex flex-col gap-4 px-4 py-6">
+            <a
+              href="#system"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+            >
+              Sistema
+            </a>
+            <a
+              href="#benefits"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+            >
+              Beneficios
+            </a>
+            <a
+              href="#cta-final"
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-lg font-medium text-foreground hover:text-primary transition-colors"
+            >
+              Comenzar
+            </a>
+            <Button variant="hero" size="lg" asChild className="w-full">
+              <a href="#cta-final" onClick={() => setMobileMenuOpen(false)}>
+                Activar mi sistema <ArrowRight className="h-4 w-4" />
+              </a>
+            </Button>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
