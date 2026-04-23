@@ -139,12 +139,12 @@ const CinematicScroll = () => {
       canvas.height = rect.height * dpr;
       ctx.scale(dpr, dpr);
 
-      /* cover-fit the image */
+      /* contain-fit the image for mobile responsiveness */
       const cw = rect.width;
       const ch = rect.height;
       const iw = img.naturalWidth;
       const ih = img.naturalHeight;
-      const scale = Math.max(cw / iw, ch / ih);
+      const scale = Math.min(cw / iw, ch / ih);
       const sw = iw * scale;
       const sh = ih * scale;
       const sx = (cw - sw) / 2;
