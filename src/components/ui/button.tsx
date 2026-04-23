@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] active:scale-[0.97]",
   {
     variants: {
       variant: {
@@ -15,9 +15,9 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gradient-primary text-primary-foreground font-semibold shadow-glow hover:shadow-elegant hover:scale-[1.03] hover:brightness-110 transition-all duration-300",
-        cta: "bg-accent text-accent-foreground font-semibold shadow-[0_10px_40px_-10px_hsl(var(--accent)/0.5)] hover:scale-[1.03] hover:brightness-110 transition-all duration-300",
-        glass: "glass-card text-foreground hover:border-primary/60 hover:bg-secondary/60 transition-all duration-300",
+        hero: "relative bg-gradient-primary text-primary-foreground font-semibold shadow-glow hover:shadow-elegant hover:scale-[1.04] hover:brightness-110 active:scale-[0.98] overflow-hidden before:absolute before:inset-0 before:bg-white/0 before:transition-all before:duration-300 hover:before:bg-white/10",
+        cta: "bg-accent text-accent-foreground font-semibold shadow-[0_10px_40px_-10px_hsl(var(--accent)/0.5)] hover:scale-[1.04] hover:brightness-110 hover:shadow-[0_20px_60px_-10px_hsl(var(--accent)/0.6)] active:scale-[0.98]",
+        glass: "glass-card text-foreground hover:border-primary/60 hover:bg-secondary/60 hover:shadow-[0_0_30px_hsl(var(--primary)/0.1)] active:scale-[0.98]",
       },
       size: {
         default: "h-10 px-4 py-2",

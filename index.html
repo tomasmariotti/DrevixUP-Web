@@ -1,25 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.png" type="image/png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DrevixUp · Webs que convierten visitas en clientes</title>
-    <meta name="description" content="Agencia de diseño y desarrollo web orientada a conversión. Creamos webs estratégicas que venden 24/7. Entrega en 1-7 días." />
-    <meta name="author" content="DrevixUp" />
 
-    <meta property="og:title" content="DrevixUp · Webs que convierten visitas en clientes" />
-    <meta property="og:description" content="Agencia de diseño y desarrollo web orientada a conversión. Creamos webs estratégicas que venden 24/7. Entrega en 1-7 días." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/og-image.png" />
+<head>
+  <script>
+    (function () {
+      var t = localStorage.getItem('drevixup-theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.classList.add(t);
+    })();
+  </script>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DrevixUp · AI-Powered Conversion System</title>
+  <meta name="description"
+    content="DrevixUp installs a complete AI-powered system that captures, responds, and converts leads automatically. High-converting websites, AI agents, and email automation." />
+  <meta name="author" content="DrevixUp" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@DrevixUp" />
-    <meta name="twitter:image" content="/og-image.png" />
-  </head>
+  <meta property="og:title" content="DrevixUp · AI-Powered Conversion System" />
+  <meta property="og:description"
+    content="Your website is getting visitors. But no system is converting them. We install a complete system that captures, responds, and converts leads automatically." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.png" />
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@DrevixUp" />
+  <meta name="twitter:image" content="/og-image.png" />
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>
